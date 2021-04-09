@@ -7,7 +7,8 @@ import Table from "./Components/Table";
 class App extends Component {
   constructor(props) {
     super(props)
-    this.state = {amount: '', 
+    this.state = {expenses: [],
+                  amount: '', 
                   date: '',
                   location: '', 
                   description: ''};
@@ -15,18 +16,25 @@ class App extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-    handleChange(event) {
-      this.setState({amount: event.target.value,
-                      date: event.target.value,
-                      location: event.target.value,
-                      description: event.target.value
-                    })
-                    
+    handleChange(e) {
+      const value = e.target.value
+      this.setState({
+        [e.target.name]: value 
+      })    
     }
 
-    handleSubmit(event) { 
-      event.preventDefault();
-      alert("An expense was submitted" + this.state.value)
+    handleSubmit(e) { 
+      e.preventDefault();
+      const expenseItem = {
+        id: Math.random(),
+        amount: this.state.amount,
+        date: this.state.date,
+        location: this.state.location ,
+        description: this.state.description 
+      }
+      this.setState ({
+        expenses: [expenseItem]
+      })
     }
     
     render (){
@@ -35,9 +43,16 @@ class App extends Component {
         <header>
           <h1>Expense Tracker</h1>
         </header>
-        <Form handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
+        <Form 
+          handleChange={this.handleChange} 
+          handleSubmit={this.handleSubmit} 
+          amount={this.state.amount}
+          date={this.state.date}
+          location={this.state.location} 
+          description={this.state.description}
+          />
         <br></br>
-       <Table />
+       <Table expenses={this.state.expenses} />
       </div>
     );
   }

@@ -13,6 +13,26 @@ class Table extends Component{
               <th>Description</th>
             </tr>
               </thead>
+              <tbody>
+                {this.props.expenses.map(expense => {
+                  return (
+                    <tr key={expense.id}>
+                      <td>
+                        {expense.amount}
+                      </td>
+                      <td>
+                        {expense.date}
+                      </td>
+                      <td>
+                        {expense.location}
+                      </td>
+                      <td>
+                      {expense.description}
+                      </td>
+                    </tr>
+                  )
+                })}
+              </tbody>
           </table>
         </div>
     )
