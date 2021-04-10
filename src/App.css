@@ -1,3 +1,25 @@
 body{
-  background-color: chocolate;
+  background-color: #0066b2;
+}
+
+h1{
+  margin-left: 0.5em;
+  margin-top: 0.5em;
+  color:whitesmoke
+}
+
+th, td, label{
+  color:whitesmoke;
+}
+
+table{
+  background-color: teal;
+}
+
+input{
+  border: 3px solid black;
+}
+
+input:focus{
+  background-color: lightseagreen;
 }

@@ -1,5 +1,7 @@
 import React, {Component} from "react";
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
+
 
 import Form from "./Components/Form";
 import Table from "./Components/Table";
@@ -14,6 +16,7 @@ class App extends Component {
                   description: ''};
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDelete= this.handleDelete.bind(this);
   }
 
     handleChange(e) {
@@ -32,17 +35,24 @@ class App extends Component {
         location: this.state.location ,
         description: this.state.description 
       }
-      this.setState ({
-        expenses: [expenseItem]
-      })
+      this.setState (prevState => ({
+        expenses: [...prevState.expenses, expenseItem]
+      }))
     }
     
+    handleDelete = () => {
+      this.setState({
+        expenses: this.state.expenses.slice(0,-1)
+      })
+    }
+
     render (){
       return (
       <div className="App">
         <header>
           <h1>Expense Tracker</h1>
         </header>
+        <br></br>
         <Form 
           handleChange={this.handleChange} 
           handleSubmit={this.handleSubmit} 
@@ -52,7 +62,10 @@ class App extends Component {
           description={this.state.description}
           />
         <br></br>
-       <Table expenses={this.state.expenses} />
+       <Table 
+        expenses={this.state.expenses}
+        handleDelete={this.handleDelete}
+        />
       </div>
     );
   }

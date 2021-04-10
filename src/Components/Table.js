@@ -1,16 +1,18 @@
 import React, { Component } from "react";
 
+
 class Table extends Component{
   render (){
     return (
-      <div id="table">
-          <table id="costs">
+      <div id="table" className="container">
+          <table className="table table-sm table-striped table-hover">
               <thead>
              <tr>   
               <th>Amount</th>
               <th>Date</th>
               <th>Location</th>
               <th>Description</th>
+              <th >Delete?</th>
             </tr>
               </thead>
               <tbody>
@@ -27,7 +29,15 @@ class Table extends Component{
                         {expense.location}
                       </td>
                       <td>
-                      {expense.description}
+                        {expense.description}
+                      </td>
+                      <td>
+                        <button 
+                          onClick={this.props.handleDelete}
+                          className="btn btn-danger align-middle btn-sm"
+                          >
+                          Delete
+                        </button>
                       </td>
                     </tr>
                   )
