@@ -13,7 +13,7 @@ class App extends Component {
                   amount: '', 
                   date: '',
                   location: '', 
-                  description: ''};
+                  description: ''}
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDelete= this.handleDelete.bind(this);
