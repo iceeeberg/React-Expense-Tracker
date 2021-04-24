@@ -1,6 +1,6 @@
-# React.js Expense Tracker
+# React Expense Tracker
 
-An Expensive tracker using React.js, HTML, CSS, JavaScript, and Bootstrap.
+An Expense tracker using React, HTML, CSS, JavaScript, and Bootstrap.
 
 ### Try it out [here](https://improved-expense-tracker.herokuapp.com/)
 
