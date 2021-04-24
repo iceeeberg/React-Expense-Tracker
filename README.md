@@ -4,7 +4,7 @@ An Expense tracker using React, HTML, CSS, JavaScript, and Bootstrap.
 
 ### Try it out [here](https://improved-expense-tracker.herokuapp.com/)
 
-![expense_tracker](Expense-Tracker.png)
+![Expense_Tracker](Expense-Tracker.png)
 
 ## Summary 
 
