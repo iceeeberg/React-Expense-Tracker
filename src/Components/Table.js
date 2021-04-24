@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
+import TableRow from "./TableRow"
 
-
-class Table extends Component{
-  render (){
+const Table  = ({expenses, handleDelete}) => {
+  
     return (
       <div id="table" className="container">
           <table className="table table-sm table-striped table-hover">
@@ -12,41 +12,15 @@ class Table extends Component{
               <th>Date</th>
               <th>Location</th>
               <th>Description</th>
-              <th >Delete?</th>
+              <th>Delete?</th>
             </tr>
               </thead>
               <tbody>
-                {this.props.expenses.map(expense => {
-                  return (
-                    <tr key={expense.id}>
-                      <td>
-                        {expense.amount}
-                      </td>
-                      <td>
-                        {expense.date}
-                      </td>
-                      <td>
-                        {expense.location}
-                      </td>
-                      <td>
-                        {expense.description}
-                      </td>
-                      <td>
-                        <button 
-                          onClick={this.props.handleDelete}
-                          className="btn btn-danger align-middle btn-sm"
-                          >
-                          Delete
-                        </button>
-                      </td>
-                    </tr>
-                  )
-                })}
+                <TableRow expenses={expenses} handleDelete={handleDelete} />
               </tbody>
           </table>
         </div>
     )
   }
-}
 
 export default Table

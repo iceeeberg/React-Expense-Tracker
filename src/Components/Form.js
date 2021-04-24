@@ -1,25 +1,32 @@
-import React, {Component} from "react"
+import React from "react"
 
-class Form extends Component{
-    render(){
+const Form  = ({ 
+  handleSubmit, 
+  handleChange, 
+  amount, 
+  date, 
+  description, 
+  location 
+}) => {
+   
     return (
     <div>
-      <form onSubmit={this.props.handleSubmit} id="form">
+      <form onSubmit={handleSubmit} id="form">
     <div className="col-sm-9">
       <label className="col-sm-3 col-form-label" amount="amount">Enter Amount:</label>
       <input 
-        onChange={this.props.handleChange}
-        value={this.props.amount}
+        onChange={handleChange}
+        value={amount}
         name='amount'
         type="number"
         placeholder="Enter Amount..">
       </input>
     </div>
-    <div className="col-sm-9">
-      <label className="col-sm-3 col-form-label" date="date">Enter Date:</label>
+    <div className="col-sm-8">
+      <label className="col-sm-4 col-form-label" date="date">Enter Date:</label>
         <input 
-          onChange={this.props.handleChange} 
-          value={this.props.date}
+          onChange={handleChange} 
+          value={date}
           name='date'
           type="date">
         </input>
@@ -27,8 +34,8 @@ class Form extends Component{
       <div className="col-sm-9">
         <label className="col-sm-3 col-form-label" location ="location">Enter Location:</label>
           <input 
-            onChange={this.props.handleChange}
-            value={this.props.location} 
+            onChange={handleChange}
+            value={location} 
             name='location'
             type="text" 
             placeholder="Enter Location..">
@@ -37,8 +44,8 @@ class Form extends Component{
         <div className="col-sm-9">
         <label className="col-sm-3 col-form-label" description="description">Enter Description:</label>
           <input 
-            onChange={this.props.handleChange} 
-            value={this.props.description}
+            onChange={handleChange} 
+            value={description}
             name='description'
             type="text"
             placeholder="Enter Description..">
@@ -46,12 +53,12 @@ class Form extends Component{
           </div>
         <br></br>
       <div className="row">
-        <div className="col-sm-9 offset-sm-3">
+        <div className="col-sm-9">
         <button 
           type="submit" 
           value="Submit Expense"
-          className="btn btn-primary"
-          onSubmit={this.props.handleSubmit}
+          className="btn btn-primary submitButton"
+          onSubmit={handleSubmit}
           >
           Submit
           </button>
@@ -61,5 +68,5 @@ class Form extends Component{
     </div>
       )
     }
-  }
+
   export default Form
