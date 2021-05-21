@@ -13,5 +13,4 @@ Created another expense tracker, but utilizing React this time around. The inten
 ## Author
 
 Dante Leeseberg - Full Stack Software Developer [LinkedIn](https://www.linkedin.com/in/dante-leeseberg-bba05883/)
-| Website coming soon. 
-
+| [Website](https://www.danteleeseberg.com/)
